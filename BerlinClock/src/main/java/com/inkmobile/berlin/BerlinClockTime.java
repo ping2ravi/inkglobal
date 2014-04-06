@@ -38,7 +38,9 @@ public class BerlinClockTime implements ClockTime {
 		prepareMinutes(builder);
 		return builder.toString();
 	}
-	
+	/*
+	 * Method to return Berlin Clock seconds representation of Time as String
+	 */
 	void prepareSeconds(StringBuilder builder){
 		if(seconds % 2 == 0){
 			builder.append("Y");
@@ -47,15 +49,20 @@ public class BerlinClockTime implements ClockTime {
 		}
 	}
 	
+	/*
+	 * Method to return Berlin Clock hours representation of Time as String
+	 */
 	void prepareHours(StringBuilder builder){
 		int localHour = this.hour;
 		char hourBulbs[] = {'O','O','O', 'O', ' ', 'O','O','O', 'O'};
 		int i=0;
+		//For each 5 Hours we have one Red bulb, mark them
 		while(localHour > 4){
 			hourBulbs[i++] = 'R';
 			localHour = localHour - 5;
 		}
 		i=5;
+		//For last 4 Hours we have one Red bulb for each hour, mark them
 		while(localHour > 0){
 			hourBulbs[i++] = 'R';
 			localHour = localHour - 1;
@@ -65,10 +72,14 @@ public class BerlinClockTime implements ClockTime {
 		}
 	}
 	
+	/*
+	 * Method to return Berlin Clock Minutes representation of Time as String
+	 */
 	void prepareMinutes(StringBuilder builder){
 		char minuteBulbs[] = {'O','O','O', 'O','O','O','O', 'O','O','O','O', ' ', 'O','O','O','O' };
 		int i=0;
 		int minuteCount = 5;
+		//For every 5 minutes we have one Yellow or Red bulb, so mark them
 		while(minuteCount <= minute){
 			if(minuteCount % 15 == 0){
 				minuteBulbs[i++] = 'R';	
@@ -79,6 +90,7 @@ public class BerlinClockTime implements ClockTime {
 		}
 		i = 12;
 		minuteCount = 0;
+		//For last 4 minutes we have one Yellow bulb of each Minute
 		while(minuteCount < minute % 5){
 			minuteBulbs[i++] = 'Y';
 			minuteCount = minuteCount + 1;
