@@ -39,7 +39,7 @@ To start with I started with a interface which will represent the Clock Time, an
 
 For Understanding and validating the time I created a Builder, which can understand the time and keep it in proper time segments. i.e. hours, minutes and seconds.
 
-It was possible to do it even using Factory Method on ClcokTime implementation itself, but then representation logic will be tightly bound to input format. With builder we have put the responsbility of understanding the time to builder. So in future if input time format need to change, we can have another builder, but ClockTime implementation will not change.
+It was possible to do it even using Factory Method on ClockTime implementation itself, but then representation logic will be tightly bound to input format. With builder we have put the responsbility of understanding the time to builder. So in future if input time format need to change, we can have another builder, but ClockTime implementation will not change.
 i.e. in future if we say time can come in format ss:mm:hh etc.
 
 
