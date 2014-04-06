@@ -27,13 +27,16 @@ Input     Result
 
 
 Soltuion/Design : 
+=================
 
 There are two aspects of this problem
 
 A) Understand and validates the input time
+
 B) Represent the time into String format of Bulbs
 
 To start with I started with a interface which will represent the Clock Time, and its one implementation which can convert time to Berlin Clock Format.
+
 For Understanding and validating the time I created a Builder, which can understand the time and keep it in proper time segments. i.e. hours, minutes and seconds.
 
 It was possible to do it even using Factory Method on ClcokTime implementation itself, but then representation logic will be tightly bound to input format. With builder we have put the responsbility of understanding the time to builder. So in future if input time format need to change, we can have another builder, but ClockTime implementation will not change.
