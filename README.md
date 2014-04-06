@@ -16,7 +16,11 @@ The lamps are switched on from left to right.
 Test Cases (Y = Yellow, R = Red, O = Off)
 
 Input     Result 
+
 00:00:00  Y OOOO OOOO OOOOOOOOOOO OOOO
+
 13:17:01  O RROO RRRO YYROOOOOOOO YYOO
+
 23:59:59  O RRRR RRRO YYRYYRYYRYY YYYY
+
 24:00:00  Y RRRR RRRR OOOOOOOOOOO OOOO
