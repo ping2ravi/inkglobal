@@ -1,6 +1,11 @@
 inkglobal
 =========
 
+
+Interview Stage Status : Awaiting Result
+
+
+
 Problem : 
 
 Create a representation of the Berlin Clock for a given time (hh::mm:ss).
